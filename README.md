@@ -1,5 +1,6 @@
 # bitmoji-api-scraper
-Scrapes every single bitmoji outfit id, can easily be repurposed for any other id. (You will likely want to change the gender in the api request)
+Scrapes every single bitmoji outfit id, can easily be repurposed for any other id.<br>
+(You will likely want to change the gender in the api request)
 
 
 Here is a list scraped as of 10/23/2023:
