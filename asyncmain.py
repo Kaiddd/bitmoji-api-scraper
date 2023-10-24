@@ -24,13 +24,6 @@ def get_tasks(session):
     return tasks
 
 
-async def read_data(stream_reader):
-    data = await stream_reader.read(1024)
-    
-    if isinstance(data, str):
-        data = data.encode('utf-8')
-
-
 async def get_outfits():
     global thenumber
     regex = re.compile("&outfit=.*?&")
