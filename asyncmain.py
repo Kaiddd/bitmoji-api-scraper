@@ -35,10 +35,12 @@ async def get_outfits():
             tasks = get_tasks(session)
             responses = await asyncio.gather(*tasks)
             for response in responses:
-                if response != None and response.status == 200 and response.text != "":
-                    filename = regex2.sub('',re.search(regex,str(response.url)).group(0))
-                    with open("./imgs2/"+filename+".webp","wb") as outf:
-                        outf.write(await response.content.read())
+                if response != None and response.status == 200:
+                    data = await response.content.read()
+                    if data != b'':
+                        filename = regex2.sub('',re.search(regex,str(response.url)).group(0))
+                        with open("./imgs/"+filename+".webp","wb") as outf:
+                            outf.write(await response.content.read())
         thenumber += 1000000
 
 
