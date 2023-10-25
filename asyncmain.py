@@ -40,7 +40,7 @@ async def get_outfits():
                     if data != b'':
                         filename = regex2.sub('',re.search(regex,str(response.url)).group(0))
                         with open("./imgs/"+filename+".webp","wb") as outf:
-                            outf.write(await response.content.read())
+                            outf.write(data)
         thenumber += 1000000
 
 
